@@ -1,0 +1,12 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: mysql-pvc-claim
+  annotations:
+    volume.beta.kubernetes.io/storage-class: wcp-gold-storage-policy
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi

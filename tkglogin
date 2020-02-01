@@ -1,0 +1,1 @@
+kubectl vsphere login --server 10.244.1.2 --insecure-skip-tls-verify --managed-cluster-name k8s-grid

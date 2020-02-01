@@ -1,0 +1,29 @@
+ovftool --X:logToConsole\
+ --powerOn\
+ --X:waitForIp\
+ --net:"Network 1=Pacific-Lab-SW"\
+ --name="Pacific-VCSA"\
+ --noSSLVerify\
+ --X:injectOvfEnv\
+ --acceptAllEulas\
+ --datastore=vsanDatastore\
+ --diskMode=thin\
+ --prop:guestinfo.cis.appliance.net.prefix=24\
+ --prop:guestinfo.cis.appliance.net.addr="11.0.0.21"\
+ --prop:guestinfo.cis.appliance.net.gateway="11.0.0.1"\
+  --prop:guestinfo.cis.appliance.time.tools-sync=True\
+ --prop:guestinfo.cis.appliance.net.dns.servers="11.0.0.11"\
+ --prop:guestinfo.cis.appliance.net.mode="static"\
+ --prop:guestinfo.cis.vmdir.password="VMware1!"\
+ --prop:guestinfo.cis.vmdir.username="administrator@vsphere.local"\
+ --prop:guestinfo.cis.vmdir.domain-name="vsphere.local"\
+ --prop:guestinfo.cis.deployment.node.type="embedded"\
+ --prop:guestinfo.cis.appliance.root.passwd="VMware1!"\
+ --X:enableHiddenProperties --prop:guestinfo.cis.appliance.root.shell="/bin/bash"\
+ --prop:guestinfo.cis.appliance.ssh.enabled="True"\
+ --prop:guestinfo.cis.appliance.net.addr.family="ipv4"\
+ --prop:guestinfo.cis.ceip_enabled=false\
+ --prop:guestinfo.cis.feature.states="WCP=enabled,WCP_PodVM=enabled,APIGW_NOTIFICATIONS=enabled,EAM_Cluster_VMs=enabled,CL_Registry=enabled,CNS=enabled,FCD_GlobalCatalog=enabled,FCD_Metadata=enabled,VsanCxxVmodlServer_VC=enabled"\
+ --sourceType="OVA"\
+ "/tmp/VMware-vCenter-Server-Appliance-6.9.3.10000-14528696_OVF10.ova"\
+ 'vi://root:password@123@10.118.87.30'
