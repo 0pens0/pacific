@@ -4,3 +4,4 @@ alias k=kubectl
 complete -F __start_kubectl k
 alias getcon='kubectl config get-contexts'
 alias usecon='kubectl config use-context'
+alias delcon='kubectl config delete-context'
