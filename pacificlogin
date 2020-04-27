@@ -1,1 +1,1 @@
-kubectl vsphere login --server=https://12.15.200.1:6443 --insecure-skip-tls-verify -u administrator@vsphere.local
+kubectl vsphere login --server=https://12.15.80.1:6443 --insecure-skip-tls-verify -u administrator@vsphere.local
