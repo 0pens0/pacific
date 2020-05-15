@@ -1,0 +1,25 @@
+apiVersion: run.tanzu.vmware.com/v1alpha1
+kind: TanzuKubernetesCluster
+metadata:
+  name: tas-cluster
+  namespace: tanzu-application-service
+spec:
+  topology:
+    controlPlane:
+      count: 1
+      class: best-effort-large
+      storageClass: k8s-storage-policy
+    workers:
+      count: 5
+      class: best-effort-large
+      storageClass: k8s-storage-policy
+  distribution:
+    version: v1.16
+  settings:
+    network:
+      cni:
+        name: calico
+      services:
+        cidrBlocks: ["198.51.100.0/12"]
+      pods:
+        cidrBlocks: ["192.0.2.0/16"]

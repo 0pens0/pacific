@@ -1,0 +1,35 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: petclinic-deployment
+spec:
+  selector:
+    matchLabels:
+      app: spring-petclinic
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: spring-petclinic
+    spec:
+      containers:
+      - name: spring-petclinic
+        image: harbor.tanzuworld.com/openso/petclinic
+        ports:
+        - containerPort: 80
+---
+# This creates the K8s Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: petclinic
+  labels:
+    app: spring-petclinic
+spec:
+  ports:
+    # the port that this service should serve on
+    - port: 8080
+  selector:
+    app: spring-petclinic
+  type: LoadBalancer
+

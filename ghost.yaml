@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: blog-content
   annotations:
-    volume.beta.kubernetes.io/storage-class: 'pacific-storage-policy'
+    volume.beta.kubernetes.io/storage-class: 'k8s-storage-policy'
 spec:
   accessModes:
     - ReadWriteOnce
@@ -27,7 +27,7 @@ spec:
   type: LoadBalancer
 ---
 kind: Deployment
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 metadata:
   name: blog
   labels:
