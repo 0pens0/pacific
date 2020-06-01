@@ -1,0 +1,29 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5ekNDQWJPZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJd01EVXdNVEUzTWprME9Gb1hEVE13TURReU9URTNNelEwT0Zvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTTJiClNpSFNsdUYyV0pKS0RjYVdzcythQlF3RDlhVWpGWStzNXlxK0hSNU0wTVgySy9aL01Ia1JUanZVS242L2I3bFAKVzlJV0djdjNUWG5BNCt2OGxhZktGd2prQnlHalg5N0JDNHhuQlZXeUNRNEVxWk45K3ArT1hYQTkyUGFVc0hIRwpQL2l2a0VCQjRCcVJYN0hNKzc1TFkvS21IeWxQMWFjWnM5RVRmZDQ1alNycnBTL0xNc3NKaUdQN0kxYmw1QXZVCnVZQ0JwV3l0L3Rab3lod0hwelJwMC8xanl6cDg3Slg1Q0tRdkFPeHpKb2xpSHZRVnlPcThnc05zcWlVTUJQbUgKOWRxZnhZdHNNenBmSjZCNjBlS3I3TmdrMzN3ZUZVRVV5SDBxcElwb3ZnbnZkcERveTd1RWhxRnljRkFSRk8yNgprT0tUNDg5MTNzdmMxemZXa1dFQ0F3RUFBYU1tTUNRd0RnWURWUjBQQVFIL0JBUURBZ0trTUJJR0ExVWRFd0VCCi93UUlNQVlCQWY4Q0FRQXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBQjhSUUMvYy8yWnc1MWFDVDVtWnYrem4KTjNFY0MzTkxhdlBzSk5nRmFyWFczUk1jbVc0L2s4K1ZTUTlJTU9kUFJBSVdDdm4zeTI4R0NESldhWU1jTGtkVwo3L0JyQzJLWDl4RUpwSGdJcG96Q0NNN3JsSXNMd0dRVGxSdHBiMGZUODMzUlpvemh4OFYrd3h4aFl3d0IzOVd5CmNLLzhwYjV6NUp2dURGSDlBVVA5ZTcybmlOQUJvY1hLQVJENlhmSVNIQTdrUDU2TzBwN0dFLy9ydGc2YzZmUXcKbTlXeDZReXBSdlB5dkZZNkxQdlJRc004dG9Zd25xS3lBUWI1ZWIzOW5lRnN4c0duQlg2ZDY1L2QydDJick83SQpXMVdNdjlMWmdKaXdML09yVnU3SDlxelZTTmJyNWNkZWVJZmJPcVpRYTdnRStCZ0pjdGV3NXFZTHB2UHJIOUE9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+    server: https://ntf6rbplj8agjl94xjh2mlc4ot01-k8s-902564260.eu-west-1.elb.amazonaws.com:443
+  name: prod-management
+contexts:
+- context:
+    cluster: prod-management
+    namespace: default
+    user: prod-management
+  name: prod-management
+current-context: prod-management
+kind: Config
+preferences: {}
+users:
+- name: prod-management
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - cluster
+      - generate-token-v2
+      command: tmc
+      env:
+      - name: CLUSTER_UID
+        value: c:01E78M9QRGGCRYH7CMEDZQQ0QZ
+      - name: CLUSTER_RID
+        value: rid:c:36f62bdc-17dc-4a30-8f84-77e78f510d01:global:prod-management

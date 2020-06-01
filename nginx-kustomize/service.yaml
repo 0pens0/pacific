@@ -1,0 +1,16 @@
+---
+# This creates the K8s Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  ports:
+    # the port that this service should serve on
+    - port: 80
+  selector:
+    app: nginx
+  type: LoadBalancer
+
