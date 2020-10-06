@@ -1,8 +1,7 @@
 apiVersion: run.tanzu.vmware.com/v1alpha1
 kind: TanzuKubernetesCluster
 metadata:
-  name: tas-cluster
-  namespace: tanzu-application-service
+  name: acme-cluster-1
 spec:
   topology:
     controlPlane:
