@@ -1,0 +1,10 @@
+export DEFAULT_STORAGE_CLASS="k8s-storage-policy"
+export CONTROL_PLANE_STORAGE_CLASS=k8s-storage-policy
+export WORKER_STORAGE_CLASS=k8s-storage-policy
+export STORAGE_CLASSES=k8s-storage-policy
+export SERVICE_DOMAIN=lab.local
+export CONTROL_PLANE_VM_CLASS=guaranteed-xsmall
+export WORKER_VM_CLASS=guaranteed-xsmall
+export SERVICE_CIDR=100.64.0.0/13
+export CLUSTER_CIDR=100.96.0.0/11
+
