@@ -1,0 +1,13 @@
+apiVersion: vmoperator.vmware.com/v1alpha1
+kind: VirtualMachine
+metadata:
+  name: vmsvc-cloudinit-vmsvc-deploy-cloudinit-8
+  namespace: my-podvm-ns
+spec:
+  networkInterfaces:
+  - networkName: ""
+    networkType: nsx-t
+  className: best-effort-medium
+  imageName: ubuntu-groovy-20.10-cloudimg
+  powerState: poweredOn
+  storageClass: wcpglobal-storage-profile # should be a storage policy associated with the Supervisor namespace
